@@ -1,3 +1,4 @@
+
 puts("Enter your name:")
 name = STDIN.gets.chomp()
 puts("Hi," + name + "!")
@@ -8,11 +9,12 @@ score_val_player = 0
 score_val_computer = 0
 while (1)
   begin
-  puts("Make your choice:\n1 - " + dif_Choice[0] + "\n2 - " + dif_Choice[1] + "\n3 - " + dif_Choice[-1])
+  puts("Make your choice:\n1 - " + dif_Choice[0] + "\n2 - " + dif_Choice[1] + "\n3 - " + dif_Choice[-1] + "\nExit (press 0)")
   choose = gets.to_i
-  #if (choose > 3 or choose < 0)
-  #puts("Wrong input")
-  #else
+  if (choose == 0)
+   puts("Exit!")
+   break
+  else
     choose_player = dif_Choice[choose - 1]
     choose_enemy = dif_Choice.sample()
 
@@ -32,8 +34,9 @@ while (1)
     puts score_val_player
     puts ("Computer score: ")
     puts score_val_computer
+  end
   rescue # обработчик ошибки
     puts("Wrong input")
-  end
 
+  end
 end
